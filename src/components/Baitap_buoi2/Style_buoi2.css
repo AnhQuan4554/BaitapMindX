@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+}
+.left{
+    width: 50%;
+}
+img{
+    flex: 1;
+    margin-left: 50px;
+}
+p{
+    word-wrap: 400px
+}
