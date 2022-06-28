@@ -5,11 +5,11 @@ const Bai2_day4 = () => {
     
     const [checked,setChecked] = useState(0);
     const handleClick  = ()=>{
-        setChecked(checked == 5 ? 0 : checked+1);
-       
+        // setChecked(checked == 5 ? 0 : checked+1);
+       setChecked(checked +1)
       
     }
-    
+    console.log(checked)
     
     return (
     <>

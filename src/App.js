@@ -11,22 +11,19 @@ import Trenlop_day4 from './components/Baitap_day4/Trenlop_day4';
 import './components/Baitap_day4/Day4.css'
 import Bai2_day4 from './components/Baitap_day4/Bai2_day4';
 import Bai3_day4 from './components/Baitap_day4/Bai3_day4';
+import Bai1_day5 from './components/Baitap_day5/Bai1_day5';
+import Bai2_day5 from './components/Baitap_day5/Bai2_day5';
 const arrColor = ['red','yellow','green'];
+
 function App() {
  
 
   return (
     <>
-      {/* Bài 1  */}
-        <Trenlop_day4/>
-        
-        <div className='bai2'>
-              <Bai2_day4/>
-        </div>
-        <div className='bai3'>
-             <Bai3_day4/>
-        </div>
 
+      <Bai1_day5/>
+        <p>------------------------</p>
+        <Bai2_day5 nameTitle = 'TODO' />
    </>
   );
 }
