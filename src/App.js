@@ -1,37 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-import React, {useState,useEffect} from 'react'
+import React,{useState,useEffect} from 'react'
+import styled from 'styled-components'
+import Input from './Form'
+import { ToastContainer, toast } from 'react-toastify';
 
-import Api from './componet/EX1/Api';
-import Api2 from './componet/Api2';
-import Api3 from './componet/Api3';
-import Scroll from './componet/Scroll';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link,
-} from "react-router-dom";
-import Header from './componet/reacRounter/Header';
-import Product from './componet/reacRounter/ProductDetail';
 const App = () => {
- 
+  const keyValue = `keyValue`
+  
+  const data = localStorage.getItem(keyValue)//lấy  dũ liệu từ local
+  
+  const [arrStore, setArrStore] = useState([])
+  useEffect(()=>{ // chỉ cần chạy 1 lần khi mới mở trang 
+    data ? setArrStore(JSON.parse(data)):setArrStore([])
+
+  },[])
+  console.log("arrStore",arrStore[0])
   return (
     <>
-        
-        <BrowserRouter>
-       <Header/>
-        <Routes>
-          <Route path="/Api" element={<Api />}/>
-          <Route path="/Api/:productId" element={<Product/>}/>
-          <Route path="/Api2" element={<Api2 />}/>
-          <Route path="/Api3" element={<Api3 />}/>
-          
-        </Routes>
-      </BrowserRouter>
+      <Input arrStore={arrStore} setArrStore = {setArrStore} />
+      <ToastContainer/>
+   
     </>
-  
   )
 }
 
 export default App
+const Sh1 = styled.div`
+  background-color : red;
+`
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
